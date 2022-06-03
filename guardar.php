@@ -3,15 +3,17 @@
 include("db.php");
 
 if(isset($_POST['save'])){
-    // $img = addslashes(file_get_contents($_FILES['img']['tmp_name']));
-    $img = $_POST['img'];
+    $img = $_FILES['img']['name'];
+    $ruta = $_FILES["img"]["tmp_name"];
+    $destino = "img/".$img;
+    copy($ruta,$destino);
     $nom = $_POST['nom'];
     $pre = $_POST['pre'];
     $iden = $_POST['iden'];
     $desc = $_POST['desc'];
 
-    $query = "INSERT INTO productos(imagen,nombre,precio,id,descripcion) 
-    VALUES('$img', '$nom', $pre, $iden, '$desc')";
+    $query = "INSERT INTO productos(nonmbreimagen,rutaimg,nombre,precio,id,descripcion) 
+    VALUES('$img', '$destino', '$nom', $pre, $iden, '$desc')";
     $result = mysqli_query($conn,$query);
     if(!$result){
         $_SESSION['mensaje'] = "No se pudo guardar";

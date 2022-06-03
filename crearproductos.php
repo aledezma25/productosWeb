@@ -28,7 +28,7 @@
                 </div>    
             <?php session_unset();}?>
                 <div class="card card-body">
-                    <form action="guardar.php" method="POST">
+                    <form action="guardar.php" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="img" class="form-label">Nueva imagen</label>
                             <input type="file" id="img" name="img"/>
@@ -58,6 +58,6 @@
             </div>
         </div>    
     </div>
-<script src="validar.js"></script>
+<!-- <script src="validar.js"></script> -->
 </body>
 </html>

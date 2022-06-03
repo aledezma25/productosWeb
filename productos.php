@@ -42,7 +42,7 @@
                     $result = mysqli_query ($conn,$query);
                     while($row = mysqli_fetch_array($result)){?>
                         <tr>
-                            <td><img scr="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>"/></td>
+                            <td><img src="<?php echo $row['rutaimg'] ?>" width="120" height="140"></td>
                             <td><?php echo $row['nombre'] ?></td>
                             <td><?php echo $row['precio'] ?></td>
                             <td><?php echo $row['id'] ?></td>

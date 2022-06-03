@@ -19,6 +19,6 @@
         </div>
     </nav>         
 
-<script src="validar.js"></script>
+<!-- <script src="validar.js"></script> -->
 </body>
 </html>
