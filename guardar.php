@@ -24,6 +24,7 @@ if(isset($_POST['save'])){
         $_SESSION['mensaje'] = "Producto Agregado";
         $_SESSION['tipo_mensaje'] = "success";
     }
-    header("Location: crearproductos.php");
+    header("Location: productos.php");
+    // header("Location: productos.php");
 }
 ?>

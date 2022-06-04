@@ -18,7 +18,6 @@
             <a href="productos.php" class="navbar-brand">Productos</a>
         </div>
     </nav>         
-
-<!-- <script src="validar.js"></script> -->
+    Se piensa implementar el formulario de registro.
 </body>
 </html>

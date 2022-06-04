@@ -21,12 +21,6 @@
     <div class="container p-4">
         <div class="row">
             <div class="col-md-4">
-            <?php if(isset($_SESSION['mensaje'])) {?>
-                <div class="alert alert-<?= $_SESSION['tipo_mensaje'];?> alert-dimissible fade show" role="alert">
-                    <?php echo $_SESSION['mensaje'];?>
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>    
-            <?php session_unset();}?>
                 <div class="card card-body">
                     <form action="guardar.php" method="POST" enctype="multipart/form-data">
                         <div class="mb-3">
@@ -51,6 +45,7 @@
                             <input type="text" id="desc" name="desc" class="form-control" required>
                         </div>
                         <input type="submit" class="btn btn-success btn-block" name="save" value="Agregar Producto">
+
                         <a href="productos.php" class="btn btn-danger" id="btncancelar">Cancelar</a>
                     </form>
                 </div>
@@ -65,7 +60,5 @@
                 
     </div>
     
-
-<!-- <script src="validar.js"></script> -->
 </body>
 </html>

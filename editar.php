@@ -38,7 +38,7 @@ if(isset($_POST['edit'])){
         $_SESSION['mensaje'] = "Edicion exitosa!";
         $_SESSION['tipo_mensaje'] = "success";
     }
-    header("Location: index.php");
+    header("Location: productos.php");
 }
 ?>
 

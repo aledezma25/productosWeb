@@ -17,13 +17,31 @@
     <nav class="navbar navbar-dark bg-dark">
         <div class="hstack gap-3">
             <div class="container">
-                <a href="productos.php" class="navbar-brand">Productos</a>
+                <a class="navbar-brand"></a>
             </div>
+            <!-- <div class="container">
+                <a href=" " class="navbar-brand">Lista de productos</a>
+            </div> -->
+            <!-- <br><br><br> -->
             <div class="container">
                 <a href="crearproductos.php" class="navbar-brand" id="agg">Crear nuevo producto</a>
             </div>
         </div>
+        <!-- <nav class="navbar bg-dark">
+        <div class="container-fluid">
+        <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Buscar producto" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+        </div>
+        </nav> -->
     </nav>
+            <?php if(isset($_SESSION['mensaje'])) {?>
+                <div class="alert alert-<?= $_SESSION['tipo_mensaje'];?> alert-dimissible fade show" role="alert">
+                    <?php echo $_SESSION['mensaje'];?>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>    
+            <?php session_unset();}?>
             <div class="col-md-8">
             <!-- class="table table-bordered" -->
             <table id="main-container">
@@ -59,10 +77,9 @@
                         </tr>
                     <?php } ?>
                 </tbody> 
-                </table>  
+                </table> 
             </div>
-        </div>    
+        </div>  
     </div>
-<!-- <script src="validar.js"></script -->
 </body>
 </html>
