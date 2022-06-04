@@ -3,15 +3,17 @@
 include("db.php");
 
 if(isset($_POST['save'])){
-    // $img = addslashes(file_get_contents($_FILES['img']['tmp_name']));
-    $img = $_POST['img'];
+    $img = $_FILES['img']['name'];
+    $ruta = $_FILES["img"]["tmp_name"];
+    $destino = "img/".$img;
+    copy($ruta,$destino);
     $nom = $_POST['nom'];
     $pre = $_POST['pre'];
     $iden = $_POST['iden'];
     $desc = $_POST['desc'];
 
-    $query = "INSERT INTO productos(imagen,nombre,precio,id,descripcion) 
-    VALUES('$img', '$nom', $pre, $iden, '$desc')";
+    $query = "INSERT INTO productos(nombreimagen,rutaimg,nombre,precio,id,descripcion) 
+    VALUES('$img', '$destino', '$nom', $pre, $iden, '$desc')";
     $result = mysqli_query($conn,$query);
     if(!$result){
         $_SESSION['mensaje'] = "No se pudo guardar";
@@ -22,6 +24,7 @@ if(isset($_POST['save'])){
         $_SESSION['mensaje'] = "Producto Agregado";
         $_SESSION['tipo_mensaje'] = "success";
     }
-    header("Location: crearproductos.php");
+    header("Location: productos.php");
+    // header("Location: productos.php");
 }
 ?>
