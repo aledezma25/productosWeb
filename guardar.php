@@ -12,7 +12,7 @@ if(isset($_POST['save'])){
     $iden = $_POST['iden'];
     $desc = $_POST['desc'];
 
-    $query = "INSERT INTO productos(nonmbreimagen,rutaimg,nombre,precio,id,descripcion) 
+    $query = "INSERT INTO productos(nombreimagen,rutaimg,nombre,precio,id,descripcion) 
     VALUES('$img', '$destino', '$nom', $pre, $iden, '$desc')";
     $result = mysqli_query($conn,$query);
     if(!$result){
