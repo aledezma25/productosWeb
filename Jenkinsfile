@@ -1,6 +1,6 @@
 pipeline{
     agent {
-            label 'App'
+            label 'principal'
     }
     parameters{
         string(name: 'name_container', defaultValue: 'sitio_web', description: 'Nombre del container')
